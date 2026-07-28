@@ -1,3 +1,8 @@
+# fly.toml app configuration file generated for wapp-backend on 2026-07-28T20:52:12Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = "wapp-backend"
 primary_region = "gru"
 
@@ -9,12 +14,12 @@ primary_region = "gru"
 [http_service]
   internal_port = 4000
   force_https = true
-  auto_stop_machines = "stop"
-  auto_start_machines = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = false
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
-  memory = "256mb"
-  cpu_kind = "shared"
+  memory = '256mb'
+  cpu_kind = 'shared'
   cpus = 1
