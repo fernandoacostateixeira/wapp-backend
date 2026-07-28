@@ -18,6 +18,11 @@ const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN ?? 'http://localhost:5173'
 
 const app = express()
 app.use(cors({ origin: CLIENT_ORIGIN }))
+
+app.get('/', (_req, res) => {
+  res.status(200).json({ status: 'ok' })
+})
+
 app.use(express.json({ verify: verifyWhatsappSignature }))
 app.use(whatsappWebhookRouter)
 
